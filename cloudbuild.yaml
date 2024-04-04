@@ -15,6 +15,6 @@ steps:
       - '--image'
       - 'gcr.io/$PROJECT_ID/SERVICE_NAME:$COMMIT_SHA'
       - '--region'
-      - 'asia-northeast1'
+      - 'asia northeast1'
   images:
     - 'gcr.io/$PROJECT_ID/cicd-test-dev:$COMMIT_SHA'
