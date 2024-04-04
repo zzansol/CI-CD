@@ -18,5 +18,3 @@ steps:
            '--image=us-central1-docker.pkg.dev/${PROJECT_ID}/cicd-test-ar/${tag}/cicd-test-ar:latest',
            '--region', 'us-central1', 'SERVICE_REGION', '--platform', 'managed',
            '--allow-unauthenticated']
-images:
-  - us-west1-docker.pkg.dev/${PROJECT_ID}/cicd-test-ar/${tag}/cicd-test-ar:latest
