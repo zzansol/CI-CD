@@ -6,11 +6,11 @@ steps:
       - build
   # 1. 도커 이미지 빌드
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/cicd-test-ar/cicd-image', '.']
+    args: ['build', '-t', 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/cicd-test-ar/cicd-image:late', '.']
 
   # 2. Artifact Registry에 푸시하는 단계
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'push', 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/cicd-test-ar/cicd-image' ]
+    args: [ 'push', 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/cicd-test-ar/cicd-image:late' ]
 
   # 3. Cloud Run 동작.
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -20,7 +20,7 @@ steps:
       - 'deploy'
       - 'cicd-test-run-2'
       - '--image'
-      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/cicd-test-ar/cicd-image'
+      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/cicd-test-ar/cicd-image:late'
       - '--region'
       - 'asia-northeast1'
 options:
