@@ -10,4 +10,3 @@ public class RootController {
         return "health!";
     }
 }
-//test
